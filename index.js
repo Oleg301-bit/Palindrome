@@ -4,11 +4,8 @@ function isPalindrom(word) {
   if (typeof word !== 'string') {
     return 'Please try again';
   }
-  const exampleWord = word.toLowerCase().replace(/[^a-zа-я0-9]/g, '');
-  if (exampleWord === exampleWord.split('').reverse().join('')) {
-    return `Слово ${exampleWord} есть палиндромом`;
-  }
-  return `Слово  ${exampleWord} не есть палиндромом`;
+  const exampleWord = word.toLowerCase().replace(/\W/g, '');
+  return exampleWord === exampleWord.split('').reverse().join('');
 }
 
 console.log(isPalindrom('level'));
